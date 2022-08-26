@@ -74,7 +74,7 @@ local function rmain(mainf, libs)
     for i = 1, sz do
         local f = io.open(libs[i], 'r')
         if not f then
-            io.stderr:write(("could not open file '%s' for reading, continuing"):format(fname), '\n')
+            io.stderr:write(("could not open file '%s' for reading, continuing\n"):format(fname))
         else
             local modname = libs[i]:gsub("%.[/\\]", ''):gsub("%.%w+$", ''):gsub("[/\\]", '.')
             printfln("reading module '%s'", modname)
